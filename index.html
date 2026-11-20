@@ -107,7 +107,7 @@
       <div class="msc-top">
         <p class="lead narrow">At Kongsberg I saw autonomy from the outside: a DP system takes sensor data, estimates where
           the ship is, and controls thrusters. My Master's taught me how to build that kind of system myself, from
-          state estimation and control to perception and multi-robot coordination.</p>
+          state estimation and control to perception, multi-robot coordination and safety-critical control.</p>
         <div class="msc-stats">
           <div><b>4.64</b><span>GPA out of 5</span></div>
           <div><b>88<small>/120</small></b><span>ECTS completed</span></div>
@@ -134,7 +134,7 @@
         <article class="card">
           <span class="tag">Multi-Robot Coordination</span>
           <h3>Agent-based systems</h3>
-          <p>Task allocation, communication and cooperation between autonomous agents. This led directly to BlueSim's boat, drone and rover, and to my thesis.</p>
+          <p>Task allocation, communication and cooperation between autonomous agents. This led directly to BlueSim's boat, drone and rover.</p>
         </article>
         <article class="card">
           <span class="tag">Robot Perception</span>
@@ -156,27 +156,72 @@
 
       <!-- ===== THESIS ===== -->
       <div class="thesis" id="thesis">
-        <div class="thesis-text">
-          <p class="eyebrow">Master's thesis · in progress</p>
-          <h3 class="h2 thesis-title">Cooperative vision-based perception for multi-robot systems</h3>
-          <!-- EDIT: put your exact thesis title, supervisor and/or partner company here. -->
-          <p>One camera on one robot has blind spots: islands, other vessels, glare, a low viewpoint.
-            My thesis studies how several robots, such as a surface boat and a drone, can <b>share what their cameras see</b>.
-            Together they build one better picture of the scene than any single robot could.</p>
-          <ol class="thesis-steps" id="thesis-steps">
-            <li data-step="0"><b>Detect</b><span>Each robot runs vision on its own camera</span></li>
-            <li data-step="1"><b>Share</b><span>Detections + robot poses exchanged over ROS&nbsp;2</span></li>
-            <li data-step="2"><b>Fuse</b><span>Combine views into one sharper estimate</span></li>
-            <li data-step="3"><b>Act</b><span>Robots re-plan using the shared picture</span></li>
+        <div class="thesis-head">
+          <div>
+            <p class="eyebrow">Master's thesis · paper in preparation (target: CCTV 2027)</p>
+            <h3 class="h2 thesis-title">Mass-aware collision avoidance for small USVs in harbours</h3>
+            <!-- EDIT: replace with your exact thesis / paper title and supervisor. -->
+            <p>Small uncrewed surface vessels working in harbours have to pass buoys and posts at close range,
+              but they can only carry light, low-cost sensors. My thesis builds a collision-avoidance method for a
+              <b>catamaran USV</b> that uses only a <b>monocular camera</b>, a <b>2D LiDAR</b> and a
+              <b>safety filter based on High-Order Control Barrier Functions (HOCBF)</b>.</p>
+            <p>The key idea is that the safety filter is written directly in <b>thrust force and yaw moment</b>, so the
+              boat's <b>mass, moment of inertia and hydrodynamic drag</b> enter every constraint. A filter that ignores
+              mass assumes the boat can stop or turn faster than it physically can.</p>
+          </div>
+          <ol class="pipeline">
+            <li><b>Camera depth</b><span>Depth Anything 3 gives relative depth from one camera. LiDAR returns that the camera also sees convert it to metres.</span></li>
+            <li><b>LiDAR map with memory</b><span>A world-fixed obstacle map keeps obstacles in sectors the camera can't see.</span></li>
+            <li><b>HOCBF safety filter</b><span>A quadratic program minimally changes the thrust and yaw moment commands, using a surge-yaw model with mass, inertia and drag.</span></li>
+            <li><b>Seven-disc hull cover</b><span>The hull is covered by seven discs, so the filter can use yaw to swing the bow away from an obstacle.</span></li>
+            <li><b>Stopping-distance speed limit</b><span>Speed is capped from the vessel's stopping distance, so the QP stays feasible under thrust limits.</span></li>
+            <li><b>ROS&nbsp;2 + BlueSim</b><span>Implemented in ROS&nbsp;2 and evaluated in BlueSim, my Unreal Engine 5 simulator, with floating buoys.</span></li>
           </ol>
-          <p class="muted small">Tested first in BlueSim, then on the BlueBoat platform. The method details are still being refined.</p>
         </div>
-        <figure class="thesis-fig">
-          <svg id="thesis-svg" viewBox="0 0 640 420" role="img" aria-labelledby="thesis-svg-title">
-            <title id="thesis-svg-title">Animation: a boat cannot see a target behind an island; a drone sees it from above; they share detections and fuse them into one estimate</title>
-          </svg>
-          <figcaption id="thesis-caption">Step 1: the boat's camera is blocked by the island.</figcaption>
+
+        <figure class="usv-fig">
+          <div class="usv-stage">
+            <svg id="usv-svg" viewBox="0 0 800 440" role="img" aria-labelledby="usv-svg-title">
+              <title id="usv-svg-title">Top-down simulation of a catamaran USV avoiding buoys and posts in a harbour with a camera, a 2D LiDAR and a control-barrier-function safety filter</title>
+            </svg>
+            <div class="dp-hud usv-hud">
+              <div><span>Filter</span><b id="usv-mode">Mass-aware HOCBF</b></div>
+              <div><span>Speed</span><b id="usv-speed">0.00 m/s</b></div>
+              <div><span>Min clearance</span><b id="usv-clear">–</b></div>
+              <div><span>Status</span><b id="usv-status">Running</b></div>
+            </div>
+          </div>
+          <div class="dp-controls">
+            <div class="seg" role="group" aria-label="Safety filter">
+              <button type="button" data-usv="mass" aria-pressed="true">Mass-aware HOCBF</button>
+              <button type="button" data-usv="accel" aria-pressed="false">Acceleration-based (ignores mass)</button>
+            </div>
+            <div class="layer-toggles" role="group" aria-label="Show layers">
+              <label><input type="checkbox" data-layer="camera" checked> Camera</label>
+              <label><input type="checkbox" data-layer="lidar" checked> LiDAR rays</label>
+              <label><input type="checkbox" data-layer="map" checked> LiDAR map</label>
+              <label><input type="checkbox" data-layer="discs" checked> Hull discs</label>
+            </div>
+            <button type="button" class="btn btn-small btn-ghost" id="usv-restart">Restart run</button>
+          </div>
+          <figcaption class="usv-legend">
+            <span><i class="lg lg-cam"></i>camera view</span>
+            <span><i class="lg lg-lidar"></i>LiDAR hits kept in map</span>
+            <span><i class="lg lg-nom"></i>nominal command</span>
+            <span><i class="lg lg-safe"></i>filtered (safe) command</span>
+            <span><i class="lg lg-stop"></i>stopping distance</span>
+          </figcaption>
+          <p class="muted small">This is a simplified browser re-implementation that shows the idea. It is not the thesis code, and its numbers are not
+            thesis results. The two filters use the same boat: the acceleration-based one asks for decelerations a heavy boat can't produce.</p>
         </figure>
+
+        <div class="results">
+          <div><b>Runs</b><span>being finalised</span></div>
+          <div><b>Min hull clearance</b><span>being finalised</span></div>
+          <div><b>Collisions (mass-aware)</b><span>none so far</span></div>
+          <div><b>Baseline that ignores mass</b><span>collisions, analysis ongoing</span></div>
+        </div>
+        <!-- UPDATE the four result tiles when your experiments are done, e.g. "50 runs", "0.42 m", "0 / 50", "17 / 50 for a 30 kg vessel". -->
       </div>
     </div>
   </section>
@@ -221,7 +266,7 @@
             <li>Robot physics is kept separate from the command source, so the same robot runs from the keyboard or from ROS&nbsp;2 code without changes.</li>
             <li>Standard ROS&nbsp;2 messages (<code>Twist</code>, <code>Image</code>), so lab code can later move to the real BlueBoat.</li>
             <li>Built-in experiment for camera resolution against publish rate (5–30&nbsp;Hz), to find the bandwidth limits before field tests.</li>
-            <li>Next: LiDAR (in progress), then IMU, GPS, sonar and odometry.</li>
+            <li>Floating buoys and a 2D LiDAR are now used for <a href="#thesis">my thesis on USV collision avoidance</a>. Next: IMU, GPS, sonar and odometry.</li>
           </ul>
           <a class="btn btn-ghost" href="https://github.com/MahmmudQatmh/BlueSim" target="_blank" rel="noopener">Source code on GitHub →</a>
         </div>
@@ -512,6 +557,6 @@
 
 <script src="main.js"></script>
 <script src="dp.js"></script>
-<script src="thesis.js"></script>
+<script src="usv.js"></script>
 </body>
 </html>

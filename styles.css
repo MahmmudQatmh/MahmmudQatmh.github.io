@@ -200,7 +200,7 @@ button.contact-item { text-align: left; cursor: pointer; font-family: inherit; w
 .learn .card h3 { font-size: 17px; }
 .learn .card p { font-size: 15px; color: var(--muted); }
 
-.thesis { display: grid; grid-template-columns: 1fr 1.15fr; gap: 40px; margin-top: 56px; padding: 32px; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); align-items: center; }
+.thesis { margin-top: 56px; padding: 32px; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); }
 .thesis-title { font-size: clamp(22px, 2.6vw, 28px); margin-bottom: 14px; }
 .thesis-steps { list-style: none; padding: 0; margin: 20px 0 16px; display: grid; gap: 8px; }
 .thesis-steps li { display: grid; grid-template-columns: 70px 1fr; gap: 10px; align-items: baseline; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; cursor: pointer; transition: background .2s, border-color .2s; }
@@ -330,4 +330,73 @@ button.contact-item { text-align: left; cursor: pointer; font-family: inherit; w
 }
 @media (prefers-reduced-motion: reduce) {
   .loop li, #dp-svg .link.sel, #dp-svg .mk.sel .mk-pulse { animation: none; }
+}
+
+/* ---------- thesis (USV + HOCBF) ---------- */
+.thesis-head { display: grid; grid-template-columns: 1.1fr 1fr; gap: 36px; align-items: start; }
+.thesis-head p { margin: 0 0 12px; }
+.pipeline { list-style: none; counter-reset: pp; padding: 0; margin: 0; display: grid; gap: 8px; }
+.pipeline li { counter-increment: pp; position: relative; padding: 10px 12px 10px 46px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); }
+.pipeline li::before { content: counter(pp); position: absolute; left: 12px; top: 10px; width: 24px; height: 24px; border-radius: 50%; background: var(--signal); color: #fff; font: 600 12px/24px "JetBrains Mono", monospace; text-align: center; }
+.pipeline b { display: block; font-size: 15px; }
+.pipeline span { font-size: 14px; color: var(--muted); }
+.usv-fig { margin: 32px 0 0; }
+.usv-stage { position: relative; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: var(--dp-sea); }
+#usv-svg { width: 100%; height: auto; display: block; }
+.usv-hud { min-width: 220px; }
+.layer-toggles { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 14px; }
+.layer-toggles label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.layer-toggles input { accent-color: var(--accent); }
+.seg button { white-space: nowrap; }
+.usv-legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); margin: 0 0 8px; }
+.usv-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.lg { display: inline-block; width: 18px; height: 10px; border-radius: 3px; }
+.lg-cam { background: rgba(255, 209, 102, .35); border: 1px solid #ffd166; }
+.lg-lidar { background: radial-gradient(circle, #ff5c8a 2px, transparent 2.5px); }
+.lg-nom { height: 0; border-top: 2px dashed #b8c7d6; border-radius: 0; }
+.lg-safe { height: 0; border-top: 3px solid #3ee08f; border-radius: 0; }
+.lg-stop { height: 0; border-top: 3px solid #ff9b5c; border-radius: 0; }
+.results { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 20px; }
+.results div { border: 1px dashed var(--line); border-radius: 12px; padding: 14px; }
+.results b { display: block; font-size: 14px; }
+.results span { font-size: 13px; color: var(--muted); font-style: italic; }
+
+#usv-svg .quay { fill: #5a6672; }
+#usv-svg .bollard { fill: #2b333b; }
+#usv-svg .quay-lbl { fill: rgba(255,255,255,.7); letter-spacing: .12em; }
+#usv-svg .goal circle:first-child { fill: rgba(62,224,143,.1); stroke: #3ee08f; stroke-dasharray: 4 4; }
+#usv-svg .goal circle:nth-child(2) { fill: #3ee08f; }
+#usv-svg .goal .lbl { fill: #8ff0bd; }
+#usv-svg .cam-cone { fill: rgba(255, 209, 102, .10); stroke: rgba(255, 209, 102, .55); stroke-width: 1; }
+#usv-svg .cam-ring { fill: none; stroke: #ffd166; stroke-width: 2; }
+#usv-svg .cam-lbl { fill: #ffe29a; }
+#usv-svg .ray { stroke: rgba(255, 92, 138, .10); stroke-width: 1; }
+#usv-svg .ray.hit { stroke: rgba(255, 92, 138, .45); }
+#usv-svg .map-pts { stroke: #ff5c8a; stroke-width: 4; stroke-linecap: round; }
+#usv-svg .usv-trail { fill: none; stroke: rgba(255,255,255,.35); stroke-width: 1.5; stroke-dasharray: 2 4; }
+#usv-svg .obs-body { fill: #e8641b; stroke: #fff; stroke-width: 1.5; }
+#usv-svg .obs-post .obs-body { fill: #c5d2de; stroke: #2b333b; }
+#usv-svg .obs-safe { fill: none; stroke: rgba(255,255,255,.18); stroke-dasharray: 2 3; }
+#usv-svg .obs.known .obs-safe { stroke: rgba(255, 92, 138, .7); }
+#usv-svg .obs.hit .obs-body { fill: #ff2d55; }
+#usv-svg .pontoon { fill: #f2f5f8; stroke: #1c2a36; stroke-width: 1.5; }
+#usv-svg .usv-deck { fill: #ffcc00; stroke: #1c2a36; stroke-width: 1.2; }
+#usv-svg .usv-cam { fill: #ffd166; stroke: #1c2a36; }
+#usv-svg .usv-lidar { fill: #ff5c8a; stroke: #1c2a36; }
+#usv-svg .hull-disc { fill: rgba(62, 224, 143, .07); stroke: rgba(62, 224, 143, .8); stroke-width: 1; }
+#usv-svg .cmd-nom { stroke: #b8c7d6; stroke-width: 2; stroke-dasharray: 4 3; }
+#usv-svg .cmd-safe { stroke: #3ee08f; stroke-width: 3; }
+#usv-svg .stop-bar { stroke: #ff9b5c; stroke-width: 4; stroke-linecap: round; opacity: .85; }
+#usv-svg .crash { fill: rgba(255, 45, 85, .25); stroke: #ff2d55; stroke-width: 2; }
+#usv-svg.hide-camera .layer-camera, #usv-svg.hide-lidar .layer-lidar, #usv-svg.hide-map .layer-map, #usv-svg.hide-discs .layer-discs { display: none; }
+
+@media (max-width: 900px) {
+  .thesis-head { grid-template-columns: 1fr; }
+  .results { grid-template-columns: repeat(2, 1fr); }
+  .usv-hud { position: static; border-radius: 0; grid-template-columns: 1fr 1fr; gap: 4px 16px; }
+}
+@media (max-width: 560px) {
+  .seg { flex-direction: column; width: 100%; }
+  .seg button + button { border-left: 0; border-top: 1px solid var(--line); }
+  .usv-hud { grid-template-columns: 1fr; }
 }
