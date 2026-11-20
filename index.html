@@ -19,8 +19,9 @@
   <div class="wrap nav-inner">
     <a class="brand" href="#top">Mahmmud Qatmh</a>
     <nav class="nav-links" aria-label="Sections">
+      <a href="#msc">Master's</a>
       <a href="#bluesim">Projects</a>
-      <a href="#field">Field work</a>
+      <a href="#field">DP systems</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
@@ -47,7 +48,7 @@
         <div class="cta-row">
           <a class="btn" href="#bluesim">Watch the robots</a>
           <a class="btn btn-ghost" href="Mahmmud_Qatmh_CV.pdf" download>Download CV</a>
-          <a class="btn btn-ghost" href="mailto:pro4mahmoudqatmh@gmail.com">Email me</a>
+          <button type="button" class="btn btn-ghost" data-open-email>Email me</button>
         </div>
         <ul class="status">
           <li><span class="dot"></span>Available for full-time roles from January 2027, part-time before that</li>
@@ -98,8 +99,90 @@
     </div>
   </section>
 
+  <!-- ============ MASTER'S ============ -->
+  <section class="section alt" id="msc">
+    <div class="wrap">
+      <p class="eyebrow">M.Sc. ICT: Robotics &amp; Autonomous Systems · University of Turku · 2025 – Dec 2026</p>
+      <h2 class="h2">What my Master's is teaching me</h2>
+      <div class="msc-top">
+        <p class="lead narrow">At Kongsberg I saw autonomy from the outside: a DP system takes sensor data, estimates where
+          the ship is, and controls thrusters. My Master's taught me how to build that kind of system myself, from
+          state estimation and control to perception and multi-robot coordination.</p>
+        <div class="msc-stats">
+          <div><b>4.64</b><span>GPA out of 5</span></div>
+          <div><b>88<small>/120</small></b><span>ECTS completed</span></div>
+          <div><b>Dec 2026</b><span>Expected graduation</span></div>
+        </div>
+      </div>
+      <div class="progress" role="img" aria-label="88 of 120 ECTS completed; thesis and 2 ECTS remaining">
+        <div class="bar done" style="flex:88"><span>Courses: major + minor finished · 88 ECTS</span></div>
+        <div class="bar thesis" style="flex:30"><span>Thesis · in progress</span></div>
+        <div class="bar rest" style="flex:2"></div>
+      </div>
+
+      <div class="cards three learn">
+        <article class="card">
+          <span class="tag">Control Systems</span>
+          <h3>Modelling and control</h3>
+          <p>System modelling, stability, and PID and state-space control. It's the same theory behind DP position and heading control, so I now understand the tuning I used to do in the field.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Localisation &amp; Navigation</span>
+          <h3>State estimation and sensor fusion</h3>
+          <p>Kalman filtering, odometry and mapping, and fusing noisy sensors into one estimate. A DP system does exactly this with GNSS, HiPAP, gyro and MRU data.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Multi-Robot Coordination</span>
+          <h3>Agent-based systems</h3>
+          <p>Task allocation, communication and cooperation between autonomous agents. This led directly to BlueSim's boat, drone and rover, and to my thesis.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Robot Perception</span>
+          <h3>Seeing the world</h3>
+          <p>Camera models, image processing and object detection: turning pixels into positions a robot can act on.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Embedded AI</span>
+          <h3>AI on small computers</h3>
+          <p>Running and optimising neural networks on resource-limited hardware, such as the Raspberry Pi on a BlueBoat.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Algorithms &amp; Data</span>
+          <h3>Algorithms and data analytics</h3>
+          <p>Algorithm design, data structures and complex data analytics. These are the foundations for planning and for handling large sensor logs.</p>
+        </article>
+      </div>
+      <!-- EDIT the course descriptions above if your course content differed. -->
+
+      <!-- ===== THESIS ===== -->
+      <div class="thesis" id="thesis">
+        <div class="thesis-text">
+          <p class="eyebrow">Master's thesis · in progress</p>
+          <h3 class="h2 thesis-title">Cooperative vision-based perception for multi-robot systems</h3>
+          <!-- EDIT: put your exact thesis title, supervisor and/or partner company here. -->
+          <p>One camera on one robot has blind spots: islands, other vessels, glare, a low viewpoint.
+            My thesis studies how several robots, such as a surface boat and a drone, can <b>share what their cameras see</b>.
+            Together they build one better picture of the scene than any single robot could.</p>
+          <ol class="thesis-steps" id="thesis-steps">
+            <li data-step="0"><b>Detect</b><span>Each robot runs vision on its own camera</span></li>
+            <li data-step="1"><b>Share</b><span>Detections + robot poses exchanged over ROS&nbsp;2</span></li>
+            <li data-step="2"><b>Fuse</b><span>Combine views into one sharper estimate</span></li>
+            <li data-step="3"><b>Act</b><span>Robots re-plan using the shared picture</span></li>
+          </ol>
+          <p class="muted small">Tested first in BlueSim, then on the BlueBoat platform. The method details are still being refined.</p>
+        </div>
+        <figure class="thesis-fig">
+          <svg id="thesis-svg" viewBox="0 0 640 420" role="img" aria-labelledby="thesis-svg-title">
+            <title id="thesis-svg-title">Animation: a boat cannot see a target behind an island; a drone sees it from above; they share detections and fuse them into one estimate</title>
+          </svg>
+          <figcaption id="thesis-caption">Step 1: the boat's camera is blocked by the island.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ BLUESIM ============ -->
-  <section class="section alt" id="bluesim">
+  <section class="section" id="bluesim">
     <div class="wrap">
       <p class="eyebrow">Featured project · University of Turku, 2026</p>
       <h2 class="h2">BlueSim: a multi-robot simulator with ROS&nbsp;2</h2>
@@ -147,7 +230,7 @@
   </section>
 
   <!-- ============ BLUEBOAT FIELD BUILD ============ -->
-  <section class="section">
+  <section class="section alt">
     <div class="wrap split">
       <div>
         <p class="eyebrow">Research Assistant · University of Turku · Summer 2026</p>
@@ -175,15 +258,93 @@
   </section>
 
   <!-- ============ FIELD WORK (KONGSBERG) ============ -->
-  <section class="section alt" id="field">
+  <section class="section" id="field">
     <div class="wrap">
       <p class="eyebrow">Kongsberg Maritime Middle East · Dubai · 2023–2025</p>
       <h2 class="h2">Field work: dynamic positioning on real vessels</h2>
       <p class="lead narrow">
-        Dynamic positioning (DP) keeps a vessel on an exact spot or track using its thrusters, sensors and
-        a redundant control system, with no anchor. It is an early, safety-critical form of marine autonomy. As a DP service engineer
-        I worked on these systems on board, during commissioning, upgrades and breakdowns.
+        Dynamic positioning (DP) keeps a ship on an exact spot or heading using only its own thrusters, with no anchor.
+        Offshore supply, drilling, construction and survey vessels rely on it to work next to platforms and over subsea wells
+        in wind, waves and current. It is one of the oldest forms of marine autonomy that is safety-critical.
+        As a DP service engineer at Kongsberg, I commissioned, tested and repaired these systems on board.
       </p>
+
+      <!-- ===== DP interactive ===== -->
+      <div class="dp" id="dp">
+        <div class="dp-stage">
+          <svg id="dp-svg" viewBox="0 0 800 480" role="img" aria-labelledby="dp-svg-title">
+            <title id="dp-svg-title">Top-down animation of a vessel in dynamic positioning, with its position reference sensors</title>
+          </svg>
+          <div class="dp-hud" aria-live="off">
+            <div><span>DP</span><b id="hud-mode">ON · auto position</b></div>
+            <div><span>Position error</span><b id="hud-pos">0.0 m</b></div>
+            <div><span>Heading error</span><b id="hud-hdg">0.0°</b></div>
+            <div><span>Wind</span><b id="hud-wind">0 m/s</b></div>
+          </div>
+        </div>
+
+        <div class="dp-controls">
+          <div class="seg" role="group" aria-label="DP mode">
+            <button type="button" data-dp="on" aria-pressed="true">DP on</button>
+            <button type="button" data-dp="off" aria-pressed="false">DP off (drift)</button>
+          </div>
+          <label class="slider">Weather
+            <input type="range" id="dp-weather" min="0" max="2" step="1" value="1" aria-valuetext="Moderate">
+            <output id="dp-weather-label">Moderate</output>
+          </label>
+          <button type="button" class="btn btn-small btn-ghost" id="dp-pause">Pause</button>
+        </div>
+
+        <div class="dp-sensors">
+          <p class="dp-hint">Tap a sensor to see where it is and how it measures.</p>
+          <div class="sensor-groups">
+            <div>
+              <h4>Vessel sensors</h4>
+              <div class="chips sensor-chips">
+                <button type="button" data-sensor="gyro">Gyrocompass</button>
+                <button type="button" data-sensor="mru">MRU / VRS</button>
+                <button type="button" data-sensor="wind">Wind sensor</button>
+              </div>
+            </div>
+            <div>
+              <h4>Absolute position references</h4>
+              <div class="chips sensor-chips">
+                <button type="button" data-sensor="gnss">DGNSS (GPS)</button>
+                <button type="button" data-sensor="hipap">HiPAP (acoustic)</button>
+                <button type="button" data-sensor="taut">Taut wire</button>
+              </div>
+            </div>
+            <div>
+              <h4>Relative position references</h4>
+              <div class="chips sensor-chips">
+                <button type="button" data-sensor="radascan">RadaScan</button>
+                <button type="button" data-sensor="cyscan">CyScan</button>
+                <button type="button" data-sensor="spottrack">SpotTrack</button>
+                <button type="button" data-sensor="radius">RADius</button>
+              </div>
+            </div>
+          </div>
+          <div class="sensor-info" id="sensor-info">
+            <b>Why so many sensors?</b>
+            <p>A DP system never trusts a single measurement. It compares several independent position references and
+              rejects any that drift or freeze. It blends them with heading, motion and wind data in a model of the vessel,
+              so the ship holds position even when a sensor fails.</p>
+          </div>
+        </div>
+
+        <h3 class="h3 mt-m">The control loop, many times per second</h3>
+        <ol class="loop" aria-label="DP control loop">
+          <li><b>Measure</b><span>Position references, gyro, MRU, wind</span></li>
+          <li><b>Check &amp; vote</b><span>Reject frozen, jumping or out-of-range signals</span></li>
+          <li><b>Estimate</b><span>Vessel model + Kalman filter; filters out wave motion</span></li>
+          <li><b>Control</b><span>Position &amp; heading control plus wind feed-forward</span></li>
+          <li><b>Allocate</b><span>Split the force across tunnel and azimuth thrusters</span></li>
+          <li><b>Act</b><span>Thrusters push; the vessel holds position</span></li>
+        </ol>
+        <p class="muted small">Redundancy is set by DP class: class 2 and 3 vessels must keep position after any single failure.
+          Class 3 must also survive a fire or flood in one compartment. That's why everything comes in pairs or threes,
+          and why commissioning and failure-mode testing take so long.</p>
+      </div>
 
       <!-- Make these concrete. Recruiters remember numbers and situations.
            Replace the text in each card with a real (anonymised) case:
@@ -194,7 +355,7 @@
           <h3>Bringing DP systems into service</h3>
           <dl>
             <dt>Situation</dt><dd>New-build and retrofit vessels needed DP controllers, position reference sensors and networks installed, configured and proven.</dd>
-            <dt>What I did</dt><dd>Configured controllers and networks, tuned and verified the system, and ran tests against class and client requirements.</dd>
+            <dt>What I did</dt><dd>Configured controllers, sensors (MRUs, gyrocompasses, position references) and networks. Then ran Harbour Acceptance Tests (HAT) and offshore sea trials to class and client requirements.</dd>
             <dt>Outcome</dt><dd>Systems handed over and accepted by clients. <!-- ADD: e.g. "X vessels commissioned", vessel types (PSV, crew boat, dredger…) --></dd>
           </dl>
         </article>
@@ -223,7 +384,7 @@
   </section>
 
   <!-- ============ EXPERIENCE ============ -->
-  <section class="section" id="experience">
+  <section class="section alt" id="experience">
     <div class="wrap">
       <h2 class="h2">Experience</h2>
       <ol class="timeline">
@@ -270,7 +431,7 @@
           <h3>M.Sc. ICT: Robotics &amp; Autonomous Systems</h3>
           <p class="muted">University of Turku · 2025 – Dec 2026 (expected)</p>
           <p>GPA <b>4.64 / 5</b> · <b>88 / 120 ECTS</b> completed. All courses for the major and minor are finished, with only the thesis and 2 ECTS left.</p>
-          <p class="muted small">Multi-robot coordination · Localisation &amp; navigation · Control systems · Embedded AI · Algorithms</p>
+          <p class="small"><a href="#msc">Courses and thesis ↑</a></p>
         </article>
         <article class="card">
           <h3>B.Sc. Mechatronics Engineering</h3>
@@ -282,7 +443,7 @@
   </section>
 
   <!-- ============ SKILLS ============ -->
-  <section class="section alt" id="skills">
+  <section class="section" id="skills">
     <div class="wrap">
       <h2 class="h2">Skills</h2>
       <div class="skills">
@@ -296,7 +457,7 @@
   </section>
 
   <!-- ============ PUBLICATIONS ============ -->
-  <section class="section">
+  <section class="section alt">
     <div class="wrap">
       <h2 class="h2">Publications</h2>
       <ol class="pubs">
@@ -316,7 +477,7 @@
       <p class="lead narrow">I'm looking for roles in <b>robotics and autonomy</b>, <b>marine and industrial automation</b>,
         <b>commissioning and field engineering</b>, and <b>simulation</b>. I'm happy to have a short call, or to visit if you're in the Turku region.</p>
       <div class="contact-grid">
-        <a class="contact-item" href="mailto:pro4mahmoudqatmh@gmail.com"><span>Email</span>pro4mahmoudqatmh@gmail.com</a>
+        <button type="button" class="contact-item" data-open-email><span>Email</span>pro4mahmoudqatmh@gmail.com<small>Alt: MahmoudQatma@outlook.com</small></button>
         <a class="contact-item" href="tel:+358449512657"><span>Phone</span>+358 44 951 2657</a>
         <a class="contact-item" href="https://www.linkedin.com/in/mahmmud-qatmh" target="_blank" rel="noopener"><span>LinkedIn</span>mahmmud-qatmh</a>
         <a class="contact-item" href="https://github.com/MahmmudQatmh" target="_blank" rel="noopener"><span>GitHub</span>MahmmudQatmh</a>
@@ -325,10 +486,32 @@
   </section>
 </main>
 
+<dialog class="email-dialog" id="email-dialog" aria-labelledby="email-title">
+  <form method="dialog" class="email-close-form"><button class="email-close" aria-label="Close">×</button></form>
+  <h2 id="email-title">Email me</h2>
+  <div class="email-row">
+    <div><span class="email-label">Main</span><b>pro4mahmoudqatmh@gmail.com</b></div>
+    <div class="email-actions">
+      <button type="button" class="btn btn-small btn-ghost" data-copy="pro4mahmoudqatmh@gmail.com">Copy</button>
+      <a class="btn btn-small" href="mailto:pro4mahmoudqatmh@gmail.com">Open mail app</a>
+    </div>
+  </div>
+  <div class="email-row">
+    <div><span class="email-label">Alternative</span><b>MahmoudQatma@outlook.com</b></div>
+    <div class="email-actions">
+      <button type="button" class="btn btn-small btn-ghost" data-copy="MahmoudQatma@outlook.com">Copy</button>
+      <a class="btn btn-small btn-ghost" href="mailto:MahmoudQatma@outlook.com">Open mail app</a>
+    </div>
+  </div>
+  <p class="muted small" id="copy-status" aria-live="polite"></p>
+</dialog>
+
 <footer class="footer">
   <div class="wrap">© 2026 Mahmmud Qatmh · Turku, Finland</div>
 </footer>
 
 <script src="main.js"></script>
+<script src="dp.js"></script>
+<script src="thesis.js"></script>
 </body>
 </html>
