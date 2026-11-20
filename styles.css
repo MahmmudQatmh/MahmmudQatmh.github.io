@@ -400,3 +400,8 @@ button.contact-item { text-align: left; cursor: pointer; font-family: inherit; w
   .seg button + button { border-left: 0; border-top: 1px solid var(--line); }
   .usv-hud { grid-template-columns: 1fr; }
 }
+
+/* BlueBoat field photo */
+.field-photo { margin: 0; justify-self: center; max-width: 440px; width: 100%; }
+.field-photo img { width: 100%; height: auto; max-height: 620px; object-fit: cover; border-radius: var(--radius); border: 1px solid var(--line); box-shadow: var(--shadow); }
+.field-photo figcaption { font-size: 13px; color: var(--muted); margin-top: 10px; }
