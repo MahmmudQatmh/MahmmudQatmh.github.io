@@ -1,560 +1,192 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mahmmud Qatmh · Robotics & Marine Automation Engineer</title>
-  <meta name="description" content="Robotics and autonomous systems engineer in Turku, Finland. 2.5 years commissioning Kongsberg dynamic positioning systems on ships, M.Sc. Robotics & Autonomous Systems (University of Turku), ROS 2 and Unreal Engine multi-robot simulation.">
-  <meta property="og:title" content="Mahmmud Qatmh · Robotics & Marine Automation Engineer">
-  <meta property="og:description" content="Ship automation in the field + ROS 2 autonomy research. Based in Turku, Finland.">
-  <meta property="og:image" content="media/bluesim-multirobot.jpg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mahmmud Qatmh · Robotics &amp; Autonomous Systems Engineer</title>
+<meta name="description" content="Robotics and autonomous systems engineer in Turku, Finland. 2.5 years on Kongsberg dynamic positioning systems; M.Sc. Robotics &amp; Autonomous Systems with projects in marine autonomy, drones, FPGA and multi-robot control.">
+<meta name="author" content="Mahmmud Qatmh">
+<meta property="og:title" content="Mahmmud Qatmh · Robotics &amp; Autonomous Systems Engineer">
+<meta property="og:description" content="Robotics and autonomous systems engineer in Turku, Finland. 2.5 years on Kongsberg dynamic positioning systems; M.Sc. Robotics &amp; Autonomous Systems with projects in marine autonomy, drones, FPGA and multi-robot control.">
+<meta property="og:image" content="https://mahmmudqatmh.github.io/media/bluesim-multirobot.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%2313171c'/%3E%3Ctext x='32' y='41' font-family='Arial' font-weight='700' font-size='24' fill='white' text-anchor='middle'%3EMQ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=202611231419">
 </head>
 <body>
-
-<header class="nav">
-  <div class="wrap nav-inner">
-    <a class="brand" href="#top">Mahmmud Qatmh</a>
-    <nav class="nav-links" aria-label="Sections">
-      <a href="#msc">Master's</a>
-      <a href="#bluesim">Projects</a>
-      <a href="#field">DP systems</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a class="btn btn-small" href="Mahmmud_Qatmh_CV.pdf" download>CV (PDF)</a>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html"><span class="mono">MQ</span><span>Mahmmud Qatmh</span></a>
+    <nav class="nav" aria-label="Main"><a href="index.html" aria-current="page">Home</a><a href="projects/index.html">Projects</a><a href="experience.html">Experience</a><a href="about.html">About</a></nav>
+    <a class="btn btn-small header-cv" href="Mahmmud_Qatmh_CV.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>CV</a>
+    <button class="menu-btn" aria-label="Menu" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </div>
 </header>
+<main id="main">
 
-<main id="top">
-
-  <!-- ============ HERO ============ -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <p class="eyebrow">Robotics &amp; Autonomous Systems Engineer · Turku, Finland</p>
-        <h1>From shipboard automation to autonomous robots.</h1>
-        <p class="lead">
-          I spent 2.5 years at <strong>Kongsberg Maritime</strong> commissioning and troubleshooting
-          dynamic positioning systems on vessels. I'm now finishing an
-          <strong>M.Sc. in Robotics &amp; Autonomous Systems</strong> at the University of Turku,
-          where I build ROS&nbsp;2 robots and simulators. I want to bring both sides to
-          maritime, industrial and autonomous-systems teams in Finland.
-        </p>
-        <div class="cta-row">
-          <a class="btn" href="#bluesim">Watch the robots</a>
-          <a class="btn btn-ghost" href="Mahmmud_Qatmh_CV.pdf" download>Download CV</a>
-          <button type="button" class="btn btn-ghost" data-open-email>Email me</button>
-        </div>
-        <ul class="status">
-          <li><span class="dot"></span>Available for full-time roles from January 2027, part-time before that</li>
-          <li><span class="dot"></span>Living in Turku · open to on-site work, travel and offshore/yard visits</li>
-          <!-- ADD if true: "Residence permit allows work in Finland" and your Finnish level, e.g. "Finnish: A2, studying" -->
-        </ul>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill"><span class="dot"></span>Open to roles in Finland · full-time from January 2027</span>
+      <h1>Mahmmud Qatmh</h1>
+      <p class="role">Robotics &amp; Autonomous Systems Engineer · Marine automation</p>
+      <p class="lead">I commissioned and repaired <b>dynamic positioning systems on ships</b> for Kongsberg Maritime. Now I build the autonomy
+        that comes next: <b>ROS&nbsp;2 robots, simulators and safety-critical control</b>, tested on real boats and drones during my M.Sc. at the University of Turku.</p>
+      <div class="btn-row">
+        <a class="btn btn-accent" href="projects/index.html">See my projects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="Mahmmud_Qatmh_CV.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>Download CV</a>
       </div>
-      <figure class="hero-media">
-        <video src="media/bluesim-multirobot.mp4" poster="media/bluesim-multirobot.jpg" autoplay muted loop playsinline aria-label="BlueSim multi-robot experiment: boat, drone and rover controlled over ROS 2"></video>
-        <figcaption>BlueSim: boat, drone and rover running one mission over ROS&nbsp;2 (my own simulator, Unreal Engine 5)</figcaption>
-      </figure>
-    </div>
-
-    <div class="wrap facts">
-      <div class="fact"><b>2.5 yrs</b><span>DP service engineer, Kongsberg Maritime</span></div>
-      <div class="fact"><b>4.64 / 5</b><span>M.Sc. GPA · 88 of 120 ECTS done</span></div>
-      <div class="fact"><b>3 robots</b><span>Boat, drone, rover in my open-source ROS&nbsp;2 simulator</span></div>
-      <div class="fact"><b>4 papers</b><span>IEEE &amp; journal publications in ML signal processing</span></div>
-    </div>
-  </section>
-
-  <!-- ============ WHAT I BRING ============ -->
-  <section class="section">
-    <div class="wrap">
-      <h2 class="h2">What I bring to a team</h2>
-      <div class="cards three">
-        <article class="card">
-          <div class="icon" aria-hidden="true">⚓</div>
-          <h3>I know how ships are run</h3>
-          <p>Commissioning, upgrades and fault-finding of dynamic positioning control systems, sensors and
-            vessel networks. I've worked on board with crews and through client acceptance tests,
-            where safety and redundancy rules leave no room for guesswork.</p>
-        </article>
-        <article class="card">
-          <div class="icon" aria-hidden="true">🤖</div>
-          <h3>I build autonomy software</h3>
-          <p>ROS&nbsp;2 (Humble &amp; Jazzy), Python and C++, Unreal Engine 5 simulation, camera pipelines,
-            multi-robot coordination, localisation &amp; navigation, control systems and embedded AI.</p>
-        </article>
-        <article class="card">
-          <div class="icon" aria-hidden="true">🔧</div>
-          <h3>I take hardware to the water</h3>
-          <p>I assembled and integrated a BlueRobotics BlueBoat with sonar, multibeam and camera,
-            then supported its field tests. I'm comfortable going from a wiring diagram
-            to a working, tested system.</p>
-        </article>
+      <div class="icon-row">
+        <a class="icon-btn" href="https://github.com/MahmmudQatmh" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+        <a class="icon-btn" href="https://www.linkedin.com/in/mahmmud-qatmh" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+        <button class="icon-btn" data-open-email aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></button>
       </div>
     </div>
-  </section>
+    <div class="profile-card">
+      <!-- REPLACE with your photo: <img src="media/portrait.jpg" alt="Mahmmud Qatmh"> -->
+      <div class="portrait"><img src="media/blueboat-field.jpg" alt="The BlueBoat during a field test in Finland" style="object-position:50% 45%"><span class="portrait-cap">BlueBoat field test · Finland 2026</span></div>
+      <ul class="facts">
+        <li><span>Based in</span><b>Turku, Finland</b></li>
+        <li><span>M.Sc. Robotics</span><b>GPA 4.64 / 5 · Dec 2026</b></li>
+        <li><span>Industry</span><b>Kongsberg Maritime, 2.5 yrs</b></li>
+        <li><span>Research</span><b>4 papers · thesis paper in prep.</b></li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-  <!-- ============ MASTER'S ============ -->
-  <section class="section alt" id="msc">
-    <div class="wrap">
-      <p class="eyebrow">M.Sc. ICT: Robotics &amp; Autonomous Systems · University of Turku · 2025 – Dec 2026</p>
-      <h2 class="h2">What my Master's is teaching me</h2>
-      <div class="msc-top">
-        <p class="lead narrow">At Kongsberg I saw autonomy from the outside: a DP system takes sensor data, estimates where
-          the ship is, and controls thrusters. My Master's taught me how to build that kind of system myself, from
-          state estimation and control to perception, multi-robot coordination and safety-critical control.</p>
-        <div class="msc-stats">
-          <div><b>4.64</b><span>GPA out of 5</span></div>
-          <div><b>88<small>/120</small></b><span>ECTS completed</span></div>
-          <div><b>Dec 2026</b><span>Expected graduation</span></div>
-        </div>
+<section class="wrap">
+  <div class="strip reveal">
+    <div><b>2.5 yrs</b><span>Dynamic positioning, Kongsberg Maritime</span></div>
+    <div><b>6</b><span>Robotics projects, from FPGA to field boats</span></div>
+    <div><b>88 / 120</b><span>M.Sc. ECTS done, thesis in progress</span></div>
+    <div><b>4</b><span>Peer-reviewed publications</span></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div><p class="eyebrow">Selected work</p><h2 class="h2">Projects</h2></div>
+      <a class="link-arrow" href="projects/index.html">All projects →</a>
+    </div>
+    <div class="grid grid-3"><article class="pcard reveal" data-tags="marine control perception">
+      <span class="badge">M.Sc. thesis</span><div class="thumb"><img src="media/thesis-sim.svg" alt="" loading="lazy"></div>
+      <div class="body">
+        <div class="meta">2026 · M.Sc. thesis</div>
+        <h3><a href="projects/thesis-usv-collision-avoidance.html">Mass-aware collision avoidance for small USVs in harbours</a></h3>
+        <p>Camera + 2D LiDAR perception and a High-Order Control Barrier Function safety filter written in thrust and yaw moment, so mass, inertia and drag enter every constraint.</p>
+        <ul class="tags"><li>ROS 2</li><li>HOCBF / QP</li><li>Depth Anything 3</li><li>2D LiDAR</li></ul>
       </div>
-      <div class="progress" role="img" aria-label="88 of 120 ECTS completed; thesis and 2 ECTS remaining">
-        <div class="bar done" style="flex:88"><span>Courses: major + minor finished · 88 ECTS</span></div>
-        <div class="bar thesis" style="flex:30"><span>Thesis · in progress</span></div>
-        <div class="bar rest" style="flex:2"></div>
+    </article><article class="pcard reveal" data-tags="marine field">
+      <div class="thumb"><img src="media/bb-ground2.jpg" alt="" loading="lazy"></div>
+      <div class="body">
+        <div class="meta">2026 · Research Assistant · UTU</div>
+        <h3><a href="projects/blueboat-communication.html">BlueBoat wireless &amp; ROS 2 communication study</a></h3>
+        <p>Two field campaigns on a real BlueBoat: Wi-Fi mesh and relay performance, and end-to-end ROS 2 latency between the boat and the base station.</p>
+        <ul class="tags"><li>BlueBoat</li><li>ROS 2</li><li>MikroTik mesh</li><li>Chrony / NTP</li></ul>
       </div>
-
-      <div class="cards three learn">
-        <article class="card">
-          <span class="tag">Control Systems</span>
-          <h3>Modelling and control</h3>
-          <p>System modelling, stability, and PID and state-space control. It's the same theory behind DP position and heading control, so I now understand the tuning I used to do in the field.</p>
-        </article>
-        <article class="card">
-          <span class="tag">Localisation &amp; Navigation</span>
-          <h3>State estimation and sensor fusion</h3>
-          <p>Kalman filtering, odometry and mapping, and fusing noisy sensors into one estimate. A DP system does exactly this with GNSS, HiPAP, gyro and MRU data.</p>
-        </article>
-        <article class="card">
-          <span class="tag">Multi-Robot Coordination</span>
-          <h3>Agent-based systems</h3>
-          <p>Task allocation, communication and cooperation between autonomous agents. This led directly to BlueSim's boat, drone and rover.</p>
-        </article>
-        <article class="card">
-          <span class="tag">Robot Perception</span>
-          <h3>Seeing the world</h3>
-          <p>Camera models, image processing and object detection: turning pixels into positions a robot can act on.</p>
-        </article>
-        <article class="card">
-          <span class="tag">Embedded AI</span>
-          <h3>AI on small computers</h3>
-          <p>Running and optimising neural networks on resource-limited hardware, such as the Raspberry Pi on a BlueBoat.</p>
-        </article>
-        <article class="card">
-          <span class="tag">Algorithms &amp; Data</span>
-          <h3>Algorithms and data analytics</h3>
-          <p>Algorithm design, data structures and complex data analytics. These are the foundations for planning and for handling large sensor logs.</p>
-        </article>
+    </article><article class="pcard reveal" data-tags="marine multirobot aerial">
+      <div class="thumb"><img src="media/bluesim-multirobot.jpg" alt="" loading="lazy"></div>
+      <div class="body">
+        <div class="meta">2026 · Research Assistant · UTU</div>
+        <h3><a href="projects/bluesim.html">BlueSim: multi-robot simulator in Unreal Engine 5</a></h3>
+        <p>A photorealistic simulator with a surface boat, a drone and a ground rover, all controlled over ROS 2 through rclUE. Open source.</p>
+        <ul class="tags"><li>Unreal Engine 5.4</li><li>C++</li><li>rclUE</li><li>ROS 2</li></ul>
       </div>
-      <!-- EDIT the course descriptions above if your course content differed. -->
+    </article><article class="pcard reveal" data-tags="hardware perception">
+      <div class="thumb"><img src="media/fpga-zedboard.jpg" alt="" loading="lazy"></div>
+      <div class="body">
+        <div class="meta">2026 · DTEK2080 · Hardware Accelerators for AI</div>
+        <h3><a href="projects/fpga-vision-tracking.html">FPGA-accelerated vision tracking on a ZedBoard</a></h3>
+        <p>A custom VHDL Sobel accelerator streamed over AXI DMA on a Zynq-7000, with target localisation on the ARM core: 3.1× faster than software.</p>
+        <ul class="tags"><li>VHDL</li><li>Zynq-7000</li><li>Vivado / Vitis</li><li>AXI DMA</li></ul>
+      </div>
+    </article><article class="pcard reveal" data-tags="aerial perception control">
+      <div class="thumb"><img src="media/fastgate-run.jpg" alt="" loading="lazy"></div>
+      <div class="body">
+        <div class="meta">2026 · DTEK2084 · Aerial Robotics &amp; Multi-robot Systems</div>
+        <h3><a href="projects/fastgate-tello.html">FastGate: autonomous drone through 4 gates</a></h3>
+        <p>A DJI Tello flies a 4-gate course on its own and lands at a stop sign, using a YOLOv8 detector, a 6-state machine and PID alignment in ROS 2.</p>
+        <ul class="tags"><li>ROS 2</li><li>YOLOv8</li><li>DJI Tello</li><li>PID + FSM</li></ul>
+      </div>
+    </article><article class="pcard reveal" data-tags="marine multirobot control">
+      <div class="thumb"><img src="media/sas-full.jpg" alt="" loading="lazy"></div>
+      <div class="body">
+        <div class="meta">2026 · DTEK2084 · group project</div>
+        <h3><a href="projects/underwater-sas-fleet.html">Underwater fleet coordination for synthetic aperture sonar</a></h3>
+        <p>Four robots hold a rigid formation as a &quot;virtual sonar array&quot; while a distributed QP-CBF filter avoids LiDAR-detected obstacles.</p>
+        <ul class="tags"><li>ROS 2</li><li>QP-CBF (OSQP)</li><li>Distributed control</li><li>TurtleBot 4</li></ul>
+      </div>
+    </article></div>
+  </div>
+</section>
 
-      <!-- ===== THESIS ===== -->
-      <div class="thesis" id="thesis">
-        <div class="thesis-head">
-          <div>
-            <p class="eyebrow">Master's thesis · paper in preparation (target: CCTV 2027)</p>
-            <h3 class="h2 thesis-title">Mass-aware collision avoidance for small USVs in harbours</h3>
-            <!-- EDIT: replace with your exact thesis / paper title and supervisor. -->
-            <p>Small uncrewed surface vessels working in harbours have to pass buoys and posts at close range,
-              but they can only carry light, low-cost sensors. My thesis builds a collision-avoidance method for a
-              <b>catamaran USV</b> that uses only a <b>monocular camera</b>, a <b>2D LiDAR</b> and a
-              <b>safety filter based on High-Order Control Barrier Functions (HOCBF)</b>.</p>
-            <p>The key idea is that the safety filter is written directly in <b>thrust force and yaw moment</b>, so the
-              boat's <b>mass, moment of inertia and hydrodynamic drag</b> enter every constraint. A filter that ignores
-              mass assumes the boat can stop or turn faster than it physically can.</p>
-          </div>
-          <ol class="pipeline">
-            <li><b>Camera depth</b><span>Depth Anything 3 gives relative depth from one camera. LiDAR returns that the camera also sees convert it to metres.</span></li>
-            <li><b>LiDAR map with memory</b><span>A world-fixed obstacle map keeps obstacles in sectors the camera can't see.</span></li>
-            <li><b>HOCBF safety filter</b><span>A quadratic program minimally changes the thrust and yaw moment commands, using a surge-yaw model with mass, inertia and drag.</span></li>
-            <li><b>Seven-disc hull cover</b><span>The hull is covered by seven discs, so the filter can use yaw to swing the bow away from an obstacle.</span></li>
-            <li><b>Stopping-distance speed limit</b><span>Speed is capped from the vessel's stopping distance, so the QP stays feasible under thrust limits.</span></li>
-            <li><b>ROS&nbsp;2 + BlueSim</b><span>Implemented in ROS&nbsp;2 and evaluated in BlueSim, my Unreal Engine 5 simulator, with floating buoys.</span></li>
-          </ol>
-        </div>
-
-        <figure class="usv-fig">
-          <div class="usv-stage">
-            <svg id="usv-svg" viewBox="0 0 800 440" role="img" aria-labelledby="usv-svg-title">
-              <title id="usv-svg-title">Top-down simulation of a catamaran USV avoiding buoys and posts in a harbour with a camera, a 2D LiDAR and a control-barrier-function safety filter</title>
-            </svg>
-            <div class="dp-hud usv-hud">
-              <div><span>Filter</span><b id="usv-mode">Mass-aware HOCBF</b></div>
-              <div><span>Speed</span><b id="usv-speed">0.00 m/s</b></div>
-              <div><span>Min clearance</span><b id="usv-clear">–</b></div>
-              <div><span>Status</span><b id="usv-status">Running</b></div>
-            </div>
-          </div>
-          <div class="dp-controls">
-            <div class="seg" role="group" aria-label="Safety filter">
-              <button type="button" data-usv="mass" aria-pressed="true">Mass-aware HOCBF</button>
-              <button type="button" data-usv="accel" aria-pressed="false">Acceleration-based (ignores mass)</button>
-            </div>
-            <div class="layer-toggles" role="group" aria-label="Show layers">
-              <label><input type="checkbox" data-layer="camera" checked> Camera</label>
-              <label><input type="checkbox" data-layer="lidar" checked> LiDAR rays</label>
-              <label><input type="checkbox" data-layer="map" checked> LiDAR map</label>
-              <label><input type="checkbox" data-layer="discs" checked> Hull discs</label>
-            </div>
-            <button type="button" class="btn btn-small btn-ghost" id="usv-restart">Restart run</button>
-          </div>
-          <figcaption class="usv-legend">
-            <span><i class="lg lg-cam"></i>camera view</span>
-            <span><i class="lg lg-lidar"></i>LiDAR hits kept in map</span>
-            <span><i class="lg lg-nom"></i>nominal command</span>
-            <span><i class="lg lg-safe"></i>filtered (safe) command</span>
-            <span><i class="lg lg-stop"></i>stopping distance</span>
-          </figcaption>
-          <p class="muted small">This is a simplified browser re-implementation that shows the idea. It is not the thesis code, and its numbers are not
-            thesis results. The two filters use the same boat: the acceleration-based one asks for decelerations a heavy boat can't produce.</p>
-        </figure>
-
-        <div class="results">
-          <div><b>Runs</b><span>being finalised</span></div>
-          <div><b>Min hull clearance</b><span>being finalised</span></div>
-          <div><b>Collisions (mass-aware)</b><span>none so far</span></div>
-          <div><b>Baseline that ignores mass</b><span>collisions, analysis ongoing</span></div>
-        </div>
-        <!-- UPDATE the four result tiles when your experiments are done, e.g. "50 runs", "0.42 m", "0 / 50", "17 / 50 for a 30 kg vessel". -->
+<section class="section alt">
+  <div class="wrap">
+    <div class="section-head"><div><p class="eyebrow">Background</p><h2 class="h2">Industry and research</h2></div></div>
+    <div class="worlds">
+      <div class="world reveal">
+        <span class="k">Industry · 2023 – 2025</span>
+        <h3>Dynamic positioning at Kongsberg Maritime</h3>
+        <p>Commissioning, upgrades and fault-finding of DP control systems on vessels, from harbour acceptance tests to offshore sea trials.</p>
+        <ul><li>DP controllers, gyros, MRUs, position references</li><li>Hardware-in-the-loop diagnostics</li><li>Client acceptance tests and reporting</li></ul>
+        <a class="link-arrow" href="experience.html#kongsberg">How DP works (interactive) →</a>
+      </div>
+      <div class="world reveal">
+        <span class="k">Research · 2025 – now</span>
+        <h3>M.Sc. Robotics &amp; Autonomous Systems, UTU</h3>
+        <p>Control, state estimation, perception and multi-robot coordination, applied to marine robots, drones and embedded hardware.</p>
+        <ul><li>Thesis: mass-aware HOCBF collision avoidance for USVs</li><li>Research Assistant: BlueBoat field work and BlueSim</li><li>GPA 4.64 / 5</li></ul>
+        <a class="link-arrow" href="about.html#education">Courses and thesis →</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ============ BLUESIM ============ -->
-  <section class="section" id="bluesim">
-    <div class="wrap">
-      <p class="eyebrow">Featured project · University of Turku, 2026</p>
-      <h2 class="h2">BlueSim: a multi-robot simulator with ROS&nbsp;2</h2>
-      <p class="lead narrow">
-        Testing a new controller on a real boat costs a field day and carries risk. I built BlueSim in
-        <strong>Unreal Engine 5.4.4</strong> so our lab could test perception and control on a
-        <strong>surface boat, a drone and a ground rover</strong> in one shared world first.
-        Each robot has physics-based motion and an onboard camera, and all three are controlled over
-        <strong>ROS&nbsp;2</strong> through the rclUE bridge.
-      </p>
+<section class="section">
+  <div class="wrap narrow">
+    <p class="eyebrow">News</p>
+    <h2 class="h2" style="margin-bottom:24px">Recent</h2>
+    <ul class="news">
+      <li><time>Nov 2026</time><span>Writing up my thesis on <a href="projects/thesis-usv-collision-avoidance.html">mass-aware collision avoidance for USVs</a>. Paper in preparation for CCTV 2027.</span></li>
+      <li><time>Jul 2026</time><span>Second BlueBoat field campaign: <a href="projects/blueboat-communication.html">Wi-Fi mesh and ROS&nbsp;2 latency evaluation</a>.</span></li>
+      <li><time>Jun 2026</time><span>Started as Research Assistant at the University of Turku. First BlueBoat field test with sonar and waypoint missions.</span></li>
+      <li><time>Apr 2026</time><span><a href="projects/fastgate-tello.html">FastGate</a>: autonomous Tello flight through four gates with YOLOv8.</span></li>
+    </ul>
+  </div>
+</section>
 
-      <div class="player">
-        <div class="tabs" role="tablist" aria-label="BlueSim videos">
-          <button role="tab" aria-selected="true" data-src="media/bluesim-showcase.mp4" data-poster="media/bluesim-showcase.jpg" data-caption="Showcase: the environment and the three robots.">Showcase</button>
-          <button role="tab" aria-selected="false" data-src="media/bluesim-multirobot.mp4" data-poster="media/bluesim-multirobot.jpg" data-caption="Multi-robot experiment: a Python ROS 2 node sends commands to all three robots and shows their camera feeds.">Multi-robot mission</button>
-          <button role="tab" aria-selected="false" data-src="media/bluesim-blueboat.mp4" data-poster="media/bluesim-blueboat.jpg" data-caption="BlueBoat onboard camera, streamed to ROS 2 as sensor_msgs/Image.">BlueBoat camera</button>
-          <button role="tab" aria-selected="false" data-src="media/bluesim-drone.mp4" data-poster="media/bluesim-drone.jpg" data-caption="Drone onboard camera, recorded through ROS 2.">Drone camera</button>
-        </div>
-        <video id="bluesim-video" src="media/bluesim-showcase.mp4" poster="media/bluesim-showcase.jpg" controls muted playsinline preload="metadata"></video>
-        <p class="caption" id="bluesim-caption">Showcase: the environment and the three robots.</p>
-      </div>
-
-      <div class="split">
-        <div>
-          <h3 class="h3">How it fits together</h3>
-          <ol class="flow">
-            <li><b>Unreal Engine 5</b><span>Physics for boat, drone and rover · onboard cameras (640×360, 90° FOV)</span></li>
-            <li><b>rclUE bridge</b><span>C++ publishers and subscribers inside the simulator</span></li>
-            <li><b>ROS&nbsp;2 topics</b><span><code>/camera_BlueBoat</code> · <code>/cmd_BlueBoat_vel</code> · pan/tilt camera control</span></li>
-            <li><b>Python nodes</b><span>Autonomy, experiments and camera monitoring, sending <code>Twist</code> commands back</span></li>
-          </ol>
-        </div>
-        <div>
-          <h3 class="h3">Engineering choices</h3>
-          <ul class="ticks">
-            <li>Robot physics is kept separate from the command source, so the same robot runs from the keyboard or from ROS&nbsp;2 code without changes.</li>
-            <li>Standard ROS&nbsp;2 messages (<code>Twist</code>, <code>Image</code>), so lab code can later move to the real BlueBoat.</li>
-            <li>Built-in experiment for camera resolution against publish rate (5–30&nbsp;Hz), to find the bandwidth limits before field tests.</li>
-            <li>Floating buoys and a 2D LiDAR are now used for <a href="#thesis">my thesis on USV collision avoidance</a>. Next: IMU, GPS, sonar and odometry.</li>
-          </ul>
-          <a class="btn btn-ghost" href="https://github.com/MahmmudQatmh/BlueSim" target="_blank" rel="noopener">Source code on GitHub →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ BLUEBOAT FIELD BUILD ============ -->
-  <section class="section alt">
-    <div class="wrap split">
-      <div>
-        <p class="eyebrow">Research Assistant · University of Turku · Summer 2026</p>
-        <h2 class="h2">Building a survey boat for real water</h2>
-        <p>
-          The department needed a working uncrewed surface vessel for sensing research.
-          I assembled and configured a <strong>BlueRobotics BlueBoat</strong> from the hardware up,
-          integrated its sensors, set up the ROS&nbsp;2 environment and supported field testing.
-        </p>
-        <ul class="ticks">
-          <li><b>Autopilot &amp; compute:</b> Raspberry Pi 4, ArduPilot, BlueOS</li>
-          <li><b>Sensors:</b> ExploreHD camera, Cerulean Surveyor 240-16 multibeam echosounder, Cerulean OmniScan 450 side-scan sonar</li>
-          <li><b>Software:</b> ROS&nbsp;2 Jazzy environment, with measurements of network performance and communication latency for sensor streams</li>
-          <li><b>Result:</b> a field-tested platform for the lab, plus BlueSim as its digital twin for testing code before going on the water</li>
-        </ul>
-      </div>
-      <figure class="field-photo">
-        <img src="media/blueboat-field.jpg" width="900" height="1200" loading="lazy"
-             alt="The BlueBoat catamaran on calm water during a field test in Finland, with the laptop and radio base station on a table on the shore">
-        <figcaption>Field test in Finland: the BlueBoat on the water, with the radio base station and the control laptop on the shore.</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- ============ FIELD WORK (KONGSBERG) ============ -->
-  <section class="section" id="field">
-    <div class="wrap">
-      <p class="eyebrow">Kongsberg Maritime Middle East · Dubai · 2023–2025</p>
-      <h2 class="h2">Field work: dynamic positioning on real vessels</h2>
-      <p class="lead narrow">
-        Dynamic positioning (DP) keeps a ship on an exact spot or heading using only its own thrusters, with no anchor.
-        Offshore supply, drilling, construction and survey vessels rely on it to work next to platforms and over subsea wells
-        in wind, waves and current. It is one of the oldest forms of marine autonomy that is safety-critical.
-        As a DP service engineer at Kongsberg, I commissioned, tested and repaired these systems on board.
-      </p>
-
-      <!-- ===== DP interactive ===== -->
-      <div class="dp" id="dp">
-        <div class="dp-stage">
-          <svg id="dp-svg" viewBox="0 0 800 480" role="img" aria-labelledby="dp-svg-title">
-            <title id="dp-svg-title">Top-down animation of a vessel in dynamic positioning, with its position reference sensors</title>
-          </svg>
-          <div class="dp-hud" aria-live="off">
-            <div><span>DP</span><b id="hud-mode">ON · auto position</b></div>
-            <div><span>Position error</span><b id="hud-pos">0.0 m</b></div>
-            <div><span>Heading error</span><b id="hud-hdg">0.0°</b></div>
-            <div><span>Wind</span><b id="hud-wind">0 m/s</b></div>
-          </div>
-        </div>
-
-        <div class="dp-controls">
-          <div class="seg" role="group" aria-label="DP mode">
-            <button type="button" data-dp="on" aria-pressed="true">DP on</button>
-            <button type="button" data-dp="off" aria-pressed="false">DP off (drift)</button>
-          </div>
-          <label class="slider">Weather
-            <input type="range" id="dp-weather" min="0" max="2" step="1" value="1" aria-valuetext="Moderate">
-            <output id="dp-weather-label">Moderate</output>
-          </label>
-          <button type="button" class="btn btn-small btn-ghost" id="dp-pause">Pause</button>
-        </div>
-
-        <div class="dp-sensors">
-          <p class="dp-hint">Tap a sensor to see where it is and how it measures.</p>
-          <div class="sensor-groups">
-            <div>
-              <h4>Vessel sensors</h4>
-              <div class="chips sensor-chips">
-                <button type="button" data-sensor="gyro">Gyrocompass</button>
-                <button type="button" data-sensor="mru">MRU / VRS</button>
-                <button type="button" data-sensor="wind">Wind sensor</button>
-              </div>
-            </div>
-            <div>
-              <h4>Absolute position references</h4>
-              <div class="chips sensor-chips">
-                <button type="button" data-sensor="gnss">DGNSS (GPS)</button>
-                <button type="button" data-sensor="hipap">HiPAP (acoustic)</button>
-                <button type="button" data-sensor="taut">Taut wire</button>
-              </div>
-            </div>
-            <div>
-              <h4>Relative position references</h4>
-              <div class="chips sensor-chips">
-                <button type="button" data-sensor="radascan">RadaScan</button>
-                <button type="button" data-sensor="cyscan">CyScan</button>
-                <button type="button" data-sensor="spottrack">SpotTrack</button>
-                <button type="button" data-sensor="radius">RADius</button>
-              </div>
-            </div>
-          </div>
-          <div class="sensor-info" id="sensor-info">
-            <b>Why so many sensors?</b>
-            <p>A DP system never trusts a single measurement. It compares several independent position references and
-              rejects any that drift or freeze. It blends them with heading, motion and wind data in a model of the vessel,
-              so the ship holds position even when a sensor fails.</p>
-          </div>
-        </div>
-
-        <h3 class="h3 mt-m">The control loop, many times per second</h3>
-        <ol class="loop" aria-label="DP control loop">
-          <li><b>Measure</b><span>Position references, gyro, MRU, wind</span></li>
-          <li><b>Check &amp; vote</b><span>Reject frozen, jumping or out-of-range signals</span></li>
-          <li><b>Estimate</b><span>Vessel model + Kalman filter; filters out wave motion</span></li>
-          <li><b>Control</b><span>Position &amp; heading control plus wind feed-forward</span></li>
-          <li><b>Allocate</b><span>Split the force across tunnel and azimuth thrusters</span></li>
-          <li><b>Act</b><span>Thrusters push; the vessel holds position</span></li>
-        </ol>
-        <p class="muted small">Redundancy is set by DP class: class 2 and 3 vessels must keep position after any single failure.
-          Class 3 must also survive a fire or flood in one compartment. That's why everything comes in pairs or threes,
-          and why commissioning and failure-mode testing take so long.</p>
-      </div>
-
-      <!-- Make these concrete. Recruiters remember numbers and situations.
-           Replace the text in each card with a real (anonymised) case:
-           vessel type, what was wrong / what had to be delivered, what you did, the outcome. -->
-      <div class="cards three">
-        <article class="card case">
-          <span class="tag">Commissioning &amp; upgrades</span>
-          <h3>Bringing DP systems into service</h3>
-          <dl>
-            <dt>Situation</dt><dd>New-build and retrofit vessels needed DP controllers, position reference sensors and networks installed, configured and proven.</dd>
-            <dt>What I did</dt><dd>Configured controllers, sensors (MRUs, gyrocompasses, position references) and networks. Then ran Harbour Acceptance Tests (HAT) and offshore sea trials to class and client requirements.</dd>
-            <dt>Outcome</dt><dd>Systems handed over and accepted by clients. <!-- ADD: e.g. "X vessels commissioned", vessel types (PSV, crew boat, dredger…) --></dd>
-          </dl>
-        </article>
-        <article class="card case">
-          <span class="tag">Troubleshooting</span>
-          <h3>Finding faults when a vessel can't wait</h3>
-          <dl>
-            <dt>Situation</dt><dd>Operational faults in control loops, sensors or communications on vessels in service.</dd>
-            <dt>What I did</dt><dd>Used hardware-in-the-loop diagnostic tools, logs and signal checks to isolate the failing component and confirm data integrity.</dd>
-            <dt>Outcome</dt><dd>Faults isolated and fixed, with redundancy restored. <!-- ADD one real example: symptom → root cause → fix → time to resolve --></dd>
-          </dl>
-        </article>
-        <article class="card case">
-          <span class="tag">Testing &amp; documentation</span>
-          <h3>Acceptance tests with clients</h3>
-          <dl>
-            <dt>Situation</dt><dd>Owners, crews and equipment vendors need clear evidence that a system is safe and works as specified.</dd>
-            <dt>What I did</dt><dd>Coordinated with international vendors on interfaces and specs, wrote test reports and maintenance logs, and presented results during acceptance testing.</dd>
-            <dt>Outcome</dt><dd>Documented, traceable handovers that clients signed off. <!-- ADD: FAT/SAT/DP trials you took part in --></dd>
-          </dl>
-        </article>
-      </div>
-
-      <!-- Optional: one anonymised photo (no vessel names / client logos) of a bridge console, thruster room or test setup. -->
-    </div>
-  </section>
-
-  <!-- ============ EXPERIENCE ============ -->
-  <section class="section alt" id="experience">
-    <div class="wrap">
-      <h2 class="h2">Experience</h2>
-      <ol class="timeline">
-        <li>
-          <div class="when">Jun – Sep 2026</div>
-          <div>
-            <h3>Research Assistant <span>· University of Turku, Department of Computing</span></h3>
-            <p>BlueBoat USV assembly and sensor integration, ROS&nbsp;2 Jazzy setup and latency evaluation, and BlueSim, a multi-robot simulator in Unreal Engine 5 (open source).</p>
-          </div>
-        </li>
-        <li>
-          <div class="when">Feb 2023 – Jul 2025</div>
-          <div>
-            <h3>Dynamic Positioning Service Engineer <span>· Kongsberg Maritime Middle East, Dubai</span></h3>
-            <p>Commissioning, upgrades and troubleshooting of vessel DP and automation systems, plus hardware-in-the-loop diagnostics, vendor coordination, client acceptance testing and technical reporting.</p>
-          </div>
-        </li>
-        <li>
-          <div class="when">Feb 2022 – Jan 2023</div>
-          <div>
-            <h3>Maintenance Coordinator <span>· Orient Irrigation Services, Dubai</span></h3>
-            <p>Planned preventive and corrective maintenance across dozens of municipal sites, and managed crews, subcontractors and spare parts.</p>
-          </div>
-        </li>
-        <li>
-          <div class="when">2020 – 2021</div>
-          <div>
-            <h3>Maintenance Engineer Intern <span>· Sujab Industrial Co. (Eisberg), Amman</span></h3>
-            <p>Mechanical and electrical maintenance and calibration of automated lines in three continuous food-production plants.</p>
-          </div>
-        </li>
-        <li>
-          <div class="when">6 months</div>
-          <div>
-            <h3>Research Intern <span>· University of Sharjah, Biomedical Research Group</span></h3>
-            <p>Neural-network and SVM models on EEG/ECG signals for seizure and sleep-apnea detection, published in four papers.</p>
-          </div>
-        </li>
-      </ol>
-
-      <h2 class="h2 mt">Education</h2>
-      <div class="cards two">
-        <article class="card">
-          <h3>M.Sc. ICT: Robotics &amp; Autonomous Systems</h3>
-          <p class="muted">University of Turku · 2025 – Dec 2026 (expected)</p>
-          <p>GPA <b>4.64 / 5</b> · <b>88 / 120 ECTS</b> completed. All courses for the major and minor are finished, with only the thesis and 2 ECTS left.</p>
-          <p class="small"><a href="#msc">Courses and thesis ↑</a></p>
-        </article>
-        <article class="card">
-          <h3>B.Sc. Mechatronics Engineering</h3>
-          <p class="muted">University of Jordan · 2016 – 2021</p>
-          <p>Mechanical, electrical and control engineering. This is the base for my work on ship systems and robots.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ SKILLS ============ -->
-  <section class="section" id="skills">
-    <div class="wrap">
-      <h2 class="h2">Skills</h2>
-      <div class="skills">
-        <div><h3>Robotics &amp; autonomy</h3><p class="chips"><span>ROS 2 (Humble, Jazzy)</span><span>rclUE</span><span>ArduPilot</span><span>BlueOS</span><span>Multi-robot coordination</span><span>Localisation &amp; navigation</span><span>Control systems</span></p></div>
-        <div><h3>Marine systems</h3><p class="chips"><span>Dynamic positioning</span><span>Vessel automation &amp; networks</span><span>Position reference sensors</span><span>Sonar &amp; multibeam</span><span>HIL diagnostics</span><span>Commissioning &amp; acceptance testing</span></p></div>
-        <div><h3>Software &amp; simulation</h3><p class="chips"><span>Python</span><span>C++</span><span>Unreal Engine 5</span><span>MATLAB / Simulink</span><span>Linux / Ubuntu</span><span>Git</span><span>OpenCV</span></p></div>
-        <div><h3>AI &amp; signals</h3><p class="chips"><span>Neural networks</span><span>SVM</span><span>Embedded AI</span><span>Wavelet / STFT signal processing</span><span>FPGA (Verilog, VHDL)</span></p></div>
-      </div>
-      <p class="muted small mt-s">Languages: English (fluent). <!-- ADD: Arabic (native)? Finnish level (even A1/A2 shows commitment) --></p>
-    </div>
-  </section>
-
-  <!-- ============ PUBLICATIONS ============ -->
-  <section class="section alt">
-    <div class="wrap">
-      <h2 class="h2">Publications</h2>
-      <ol class="pubs">
-        <li><b>Qatmh, M.</b>, et al. Detection of epileptic seizure using discrete wavelet transform on gamma band and artificial neural network. <i>DeSE 2021</i>, IEEE Xplore. <span class="muted">First author</span></li>
-        <li><b>Qatmh, M.</b>, et al. Sleep apnea detection based on ECG signals using discrete wavelet transform and artificial neural network. <i>ASET 2022</i>, IEEE Xplore. <span class="muted">First author</span></li>
-        <li>Al-Shammaa, A., et al. (incl. <b>M. Qatmh</b>). Artificial neural network model using short-term Fourier transform for epilepsy seizure detection. <i>ASET 2022</i>, IEEE Xplore.</li>
-        <li>Al-Khedher, M., <b>Qatmh, M.</b>, et al. Speed and accuracy trade-off ANN/SVM based sleep apnea detection with FPGA implementation. <i>Computer Methods in Biomechanics and Biomedical Engineering: Imaging &amp; Visualization</i>, 2023. <a href="https://doi.org/10.1080/21681163.2023.2243342" target="_blank" rel="noopener">DOI</a></li>
-      </ol>
-      <!-- ADD the IEEE Xplore links for papers 1–3 (same links as in your CV). -->
-    </div>
-  </section>
-
-  <!-- ============ CONTACT ============ -->
-  <section class="section contact" id="contact">
-    <div class="wrap">
-      <h2 class="h2">Let's talk</h2>
-      <p class="lead narrow">I'm looking for roles in <b>robotics and autonomy</b>, <b>marine and industrial automation</b>,
-        <b>commissioning and field engineering</b>, and <b>simulation</b>. I'm happy to have a short call, or to visit if you're in the Turku region.</p>
-      <div class="contact-grid">
-        <button type="button" class="contact-item" data-open-email><span>Email</span>pro4mahmoudqatmh@gmail.com<small>Alt: MahmoudQatma@outlook.com</small></button>
-        <a class="contact-item" href="tel:+358449512657"><span>Phone</span>+358 44 951 2657</a>
-        <a class="contact-item" href="https://www.linkedin.com/in/mahmmud-qatmh" target="_blank" rel="noopener"><span>LinkedIn</span>mahmmud-qatmh</a>
-        <a class="contact-item" href="https://github.com/MahmmudQatmh" target="_blank" rel="noopener"><span>GitHub</span>MahmmudQatmh</a>
-      </div>
-    </div>
-  </section>
+<section class="wrap">
+  <div class="cta reveal">
+    <div><h2>Looking for an engineer who has worked both on ships and on robots?</h2>
+      <p>I'm open to roles in robotics and autonomy, marine and industrial automation, commissioning and field engineering, and simulation. Happy to talk or visit in the Turku region.</p></div>
+    <div class="btn-row"><button class="btn" data-open-email><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email me</button><a class="btn btn-ghost" href="https://www.linkedin.com/in/mahmmud-qatmh" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>LinkedIn</a></div>
+  </div>
+</section>
 </main>
-
-<dialog class="email-dialog" id="email-dialog" aria-labelledby="email-title">
-  <form method="dialog" class="email-close-form"><button class="email-close" aria-label="Close">×</button></form>
-  <h2 id="email-title">Email me</h2>
-  <div class="email-row">
-    <div><span class="email-label">Main</span><b>pro4mahmoudqatmh@gmail.com</b></div>
-    <div class="email-actions">
-      <button type="button" class="btn btn-small btn-ghost" data-copy="pro4mahmoudqatmh@gmail.com">Copy</button>
-      <a class="btn btn-small" href="mailto:pro4mahmoudqatmh@gmail.com">Open mail app</a>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html"><span class="mono">MQ</span><span>Mahmmud Qatmh</span></a>
+        <p class="muted small" style="max-width:340px;margin-top:12px">Robotics &amp; autonomous systems engineer with a background in marine automation. Based in Turku, Finland.</p>
+        <div class="icon-row mt-s">
+          <a class="icon-btn" href="https://github.com/MahmmudQatmh" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+          <a class="icon-btn" href="https://www.linkedin.com/in/mahmmud-qatmh" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+          <button class="icon-btn" data-open-email aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></button>
+        </div>
+      </div>
+      <div><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="projects/index.html">Projects</a></li><li><a href="experience.html">Experience</a></li><li><a href="about.html">About</a></li><li><a href="Mahmmud_Qatmh_CV.pdf" download>CV (PDF)</a></li></ul></div>
+      <div><h4>Projects</h4><ul><li><a href="projects/thesis-usv-collision-avoidance.html">Thesis: USV collision avoidance</a></li><li><a href="projects/blueboat-communication.html">BlueBoat field study</a></li><li><a href="projects/bluesim.html">BlueSim simulator</a></li><li><a href="projects/fpga-vision-tracking.html">FPGA vision tracking</a></li><li><a href="projects/fastgate-tello.html">FastGate: Tello + YOLO</a></li><li><a href="projects/underwater-sas-fleet.html">Underwater SAS fleet</a></li></ul></div>
     </div>
+    <div class="footer-bottom"><span>© 2026 Mahmmud Qatmh · Turku, Finland</span><span>pro4mahmoudqatmh@gmail.com</span></div>
   </div>
-  <div class="email-row">
-    <div><span class="email-label">Alternative</span><b>MahmoudQatma@outlook.com</b></div>
-    <div class="email-actions">
-      <button type="button" class="btn btn-small btn-ghost" data-copy="MahmoudQatma@outlook.com">Copy</button>
-      <a class="btn btn-small btn-ghost" href="mailto:MahmoudQatma@outlook.com">Open mail app</a>
-    </div>
-  </div>
-  <p class="muted small" id="copy-status" aria-live="polite"></p>
-</dialog>
-
-<footer class="footer">
-  <div class="wrap">© 2026 Mahmmud Qatmh · Turku, Finland</div>
 </footer>
-
-<script src="main.js"></script>
-<script src="dp.js"></script>
-<script src="usv.js"></script>
+<script src="main.js?v=202611231419"></script>
 </body>
 </html>

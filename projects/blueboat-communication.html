@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BlueBoat wireless &amp; ROS 2 communication study · Mahmmud Qatmh</title>
+<meta name="description" content="Field study on a real BlueBoat: Wi-Fi mesh, relay and obstacle effects, and end-to-end ROS 2 latency between boat and base station.">
+<meta name="author" content="Mahmmud Qatmh">
+<meta property="og:title" content="BlueBoat wireless &amp; ROS 2 communication study · Mahmmud Qatmh">
+<meta property="og:description" content="Field study on a real BlueBoat: Wi-Fi mesh, relay and obstacle effects, and end-to-end ROS 2 latency between boat and base station.">
+<meta property="og:image" content="https://mahmmudqatmh.github.io/media/bb-ground2.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%2313171c'/%3E%3Ctext x='32' y='41' font-family='Arial' font-weight='700' font-size='24' fill='white' text-anchor='middle'%3EMQ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css?v=202611231419">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html"><span class="mono">MQ</span><span>Mahmmud Qatmh</span></a>
+    <nav class="nav" aria-label="Main"><a href="../index.html">Home</a><a href="../projects/index.html" aria-current="page">Projects</a><a href="../experience.html">Experience</a><a href="../about.html">About</a></nav>
+    <a class="btn btn-small header-cv" href="../Mahmmud_Qatmh_CV.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>CV</a>
+    <button class="menu-btn" aria-label="Menu" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+<main id="main">
+
+<section class="page-head">
+  <div class="wrap">
+    <div class="crumbs"><a href="../index.html">Home</a> / <a href="../projects/index.html">Projects</a> / BlueBoat field study</div>
+    <p class="eyebrow">2026 · Research Assistant · UTU</p>
+    <h1>BlueBoat wireless &amp; ROS 2 communication study</h1>
+    <p class="lead narrow">Two field campaigns on a real BlueBoat: Wi-Fi mesh and relay performance, and end-to-end ROS 2 latency between the boat and the base station.</p>
+    <dl class="proj-meta"><div><dt>Year</dt><dd>Jun – Jul 2026</dd></div><div><dt>Role</dt><dd>Research Assistant</dd></div><div><dt>Where</dt><dd>University of Turku</dd></div><div><dt>Output</dt><dd>Datasets + technical report</dd></div></dl>
+    <div class="btn-row"><a class="btn" href="https://github.com/MahmmudQatmh/BlueBoat" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>View code</a><a class="btn btn-ghost" href="https://github.com/MahmmudQatmh/BlueBoat/blob/main/Documentation/BlueBoat_Latency_Experiments___Field_Tests.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h6"/></svg>Technical report</a></div>
+    <figure class="hero-media"><img src="../media/bb-ground2.jpg" alt="The BlueBoat on a lake in Finland during the communication field test"></figure>
+  </div>
+</section>
+<section class="section" style="padding-top:56px">
+  <div class="wrap prose-grid">
+    <article class="prose">
+<h2>Why it matters</h2>
+<p>An autonomous boat is only as reliable as its link to the shore. Before building autonomy on the department's BlueBoat, I needed to
+know how the wireless network and ROS&nbsp;2 actually behave on the water: how much delay, how much variation, and what happens behind
+an obstacle or through a relay.</p>
+<h2>Setup</h2>
+<ul>
+  <li><b>Boat:</b> Blue Robotics BlueBoat with a Raspberry Pi 4 running BlueOS and ArduPilot, plus a USB camera. In the first campaign it also carried a Cerulean multibeam echosounder and side-scan sonar.</li>
+  <li><b>Network:</b> MikroTik GrooveA 52 ac radios on the boat, the shore and a relay node, forming a Wi-Fi mesh with static IPs.</li>
+  <li><b>Ground station:</b> Ubuntu laptop running ROS&nbsp;2, acting as NTP server. The boat's clock was synchronised with Chrony so one-way latency could be measured.</li>
+  <li><b>ROS&nbsp;2:</b> a publisher on the boat and a subscriber on the laptop, timestamping every message end to end.</li>
+</ul>
+<figure class=""><img src="../media/blueboat-field.jpg" alt="Field test in Finland: the BlueBoat, the radio base station and the ground-station laptop." loading="lazy"><figcaption>Field test in Finland: the BlueBoat, the radio base station and the ground-station laptop.</figcaption></figure>
+<h2>Two field campaigns</h2>
+<h3>June 2026: first deployment</h3>
+<p>Assembled boat on the water: manual and autonomous waypoint runs, sonar sessions and QGroundControl telemetry logs.</p>
+<div class="gallery">
+  <figure class=""><img src="../media/bb-waypoints.jpg" alt="Autonomous waypoint mission planned in QGroundControl." loading="lazy"><figcaption>Autonomous waypoint mission planned in QGroundControl.</figcaption></figure>
+  <figure><video src="../media/blueboat-firstrun.mp4" poster="../media/blueboat-firstrun.jpg" controls muted playsinline preload="metadata"></video><figcaption>First run on the water.</figcaption></figure>
+</div>
+<h3>July 2026: communication evaluation</h3>
+<p>Four controlled scenarios, run once for network measurements and once for ROS&nbsp;2 latency, on a 15&nbsp;×&nbsp;50&nbsp;m waypoint track:</p>
+<table class="t">
+  <thead><tr><th>Scenario</th><th>Relay</th><th>Obstacle</th><th>ROS 2 mean latency</th></tr></thead>
+  <tbody>
+    <tr><td>S1</td><td>No</td><td>No</td><td>≈ 1.98 ms</td></tr>
+    <tr><td>S2</td><td>No</td><td>Concrete building</td><td>≈ 5.10 ms</td></tr>
+    <tr><td>S3</td><td>Yes</td><td>No</td><td>≈ 8.53 ms (median &lt; 3 ms)</td></tr>
+    <tr><td>S4</td><td>Yes</td><td>Concrete building</td><td>≈ 10.55 ms (p95 ≈ 58 ms)</td></tr>
+  </tbody>
+</table>
+<p>A second set of experiments raised the ROS&nbsp;2 publishing frequency during autonomous waypoint navigation (with relay) and manual teleoperation (without relay).</p>
+<h2>Findings</h2>
+<ul>
+  <li>Line of sight gave the lowest latency, highest throughput and strongest signal.</li>
+  <li>A building in the path increased latency and, more importantly, its variability.</li>
+  <li>The relay extended range while keeping performance stable, at the cost of a small forwarding delay.</li>
+  <li>Most end-to-end delay came from the wireless link. ROS&nbsp;2 itself added little.</li>
+  <li>Average latency alone is misleading: worst-case (tail) latency matters for time-critical control.</li>
+</ul>
+<div class="gallery">
+  <figure class=""><img src="../media/bb-radar.jpg" alt="Normalised comparison of the four network scenarios." loading="lazy"><figcaption>Normalised comparison of the four network scenarios.</figcaption></figure>
+  <figure class=""><img src="../media/bb-latency-cdf.jpg" alt="Latency distribution (CDF) per scenario." loading="lazy"><figcaption>Latency distribution (CDF) per scenario.</figcaption></figure>
+</div>
+<p>All datasets, ROS&nbsp;2 code, plotting scripts, radio configuration backups and the 55-page technical report are in the repository.</p></article>
+    <aside class="aside"><div class="card"><h4>Key numbers</h4><ul><li><b>2</b> field campaigns</li><li><b>4</b> network scenarios</li><li><b>≈ 2 ms</b> ROS 2 latency, line of sight</li><li><b>15 × 50 m</b> test track</li></ul></div><div class="card"><h4>Tech</h4><ul class="tags"><li>BlueBoat</li><li>ROS 2</li><li>MikroTik mesh</li><li>Chrony / NTP</li><li>Python</li></ul></div></aside>
+  </div>
+  <div class="wrap">
+    <nav class="pager" aria-label="More projects">
+      <a href="../projects/thesis-usv-collision-avoidance.html"><span>← Previous</span>Thesis: USV collision avoidance</a>
+      <a class="next" href="../projects/bluesim.html"><span>Next →</span>BlueSim simulator</a>
+    </nav>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="../index.html"><span class="mono">MQ</span><span>Mahmmud Qatmh</span></a>
+        <p class="muted small" style="max-width:340px;margin-top:12px">Robotics &amp; autonomous systems engineer with a background in marine automation. Based in Turku, Finland.</p>
+        <div class="icon-row mt-s">
+          <a class="icon-btn" href="https://github.com/MahmmudQatmh" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+          <a class="icon-btn" href="https://www.linkedin.com/in/mahmmud-qatmh" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+          <button class="icon-btn" data-open-email aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></button>
+        </div>
+      </div>
+      <div><h4>Pages</h4><ul><li><a href="../index.html">Home</a></li><li><a href="../projects/index.html">Projects</a></li><li><a href="../experience.html">Experience</a></li><li><a href="../about.html">About</a></li><li><a href="../Mahmmud_Qatmh_CV.pdf" download>CV (PDF)</a></li></ul></div>
+      <div><h4>Projects</h4><ul><li><a href="../projects/thesis-usv-collision-avoidance.html">Thesis: USV collision avoidance</a></li><li><a href="../projects/blueboat-communication.html">BlueBoat field study</a></li><li><a href="../projects/bluesim.html">BlueSim simulator</a></li><li><a href="../projects/fpga-vision-tracking.html">FPGA vision tracking</a></li><li><a href="../projects/fastgate-tello.html">FastGate: Tello + YOLO</a></li><li><a href="../projects/underwater-sas-fleet.html">Underwater SAS fleet</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Mahmmud Qatmh · Turku, Finland</span><span>pro4mahmoudqatmh@gmail.com</span></div>
+  </div>
+</footer>
+<script src="../main.js?v=202611231419"></script>
+</body>
+</html>
