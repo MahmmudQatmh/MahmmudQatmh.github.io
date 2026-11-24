@@ -15,46 +15,65 @@
     });
   }
 
-  // ---- email dialog (built once, opened by any [data-open-email]) ----
-  const dlg = document.createElement('dialog');
-  dlg.className = 'email-dialog';
-  dlg.setAttribute('aria-labelledby', 'email-title');
-  dlg.innerHTML = `
-    <form method="dialog" class="email-close-form"><button class="email-close" aria-label="Close">×</button></form>
-    <h2 id="email-title">Email me</h2>
-    ${EMAILS.map((e, i) => `
-      <div class="email-row">
-        <div><span class="email-label">${e.label}</span><b>${e.addr}</b></div>
-        <div class="email-actions">
-          <button type="button" class="btn btn-small btn-ghost" data-copy="${e.addr}">Copy</button>
-          <a class="btn btn-small ${i === 0 ? '' : 'btn-ghost'}" href="mailto:${e.addr}">Open mail app</a>
-        </div>
-      </div>`).join('')}
-    <p class="muted small" id="copy-status" aria-live="polite"></p>`;
-  document.body.appendChild(dlg);
-  const status = dlg.querySelector('#copy-status');
+  // ---- contact dialogs (email + phone), built once per page ----
+  const PHONE = { display: '+358 44 951 2657', tel: '+358449512657' };
+
+  function makeDialog(id, title, sub, rows) {
+    const dlg = document.createElement('dialog');
+    dlg.className = 'contact-dialog';
+    dlg.setAttribute('aria-labelledby', id + '-title');
+    dlg.innerHTML = `
+      <form method="dialog"><button class="dialog-close" aria-label="Close">×</button></form>
+      <h2 id="${id}-title">${title}</h2>
+      <p class="sub">${sub}</p>
+      ${rows.map((r) => `
+        <div class="contact-row">
+          <span class="contact-label">${r.label}:</span>
+          <span class="contact-value">${r.value}</span>
+          <div class="contact-actions">
+            <button type="button" class="btn btn-small btn-ghost" data-copy="${r.value}">Copy</button>
+            <a class="btn btn-small${r.primary ? '' : ' btn-ghost'}" href="${r.href}">${r.action}</a>
+          </div>
+        </div>`).join('')}
+      <p class="copy-status" aria-live="polite"></p>`;
+    document.body.appendChild(dlg);
+    const status = dlg.querySelector('.copy-status');
+    dlg.addEventListener('click', (e) => {
+      if (e.target !== dlg) return;
+      const r = dlg.getBoundingClientRect();
+      if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) dlg.close();
+    });
+    dlg.querySelectorAll('[data-copy]').forEach((b) => b.addEventListener('click', async () => {
+      const text = b.dataset.copy;
+      try { await navigator.clipboard.writeText(text); }
+      catch (_) {
+        const ta = document.createElement('textarea');
+        ta.value = text; dlg.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); } catch (__) {}
+        ta.remove();
+      }
+      status.textContent = 'Copied: ' + text;
+      b.textContent = 'Copied ✓';
+      setTimeout(() => { b.textContent = 'Copy'; }, 1800);
+    }));
+    return { open: () => { status.textContent = ''; dlg.showModal ? dlg.showModal() : null; return !!dlg.showModal; } };
+  }
+
+  const emailDlg = makeDialog('email', 'Email me', 'Please use the main address; the alternative also reaches me.', EMAILS.map((e, i) => (
+    { label: e.label, value: e.addr, href: 'mailto:' + e.addr, action: 'Open mail app', primary: i === 0 })));
   document.querySelectorAll('[data-open-email]').forEach((b) => b.addEventListener('click', (ev) => {
     ev.preventDefault();
-    status.textContent = '';
-    if (dlg.showModal) dlg.showModal(); else window.location.href = 'mailto:' + EMAILS[0].addr;
+    if (!emailDlg.open()) window.location.href = 'mailto:' + EMAILS[0].addr;
   }));
-  dlg.addEventListener('click', (e) => {
-    if (e.target !== dlg) return;
-    const r = dlg.getBoundingClientRect();
-    if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) dlg.close();
-  });
-  dlg.querySelectorAll('[data-copy]').forEach((b) => b.addEventListener('click', async () => {
-    const text = b.dataset.copy;
-    try { await navigator.clipboard.writeText(text); }
-    catch (_) {
-      const ta = document.createElement('textarea');
-      ta.value = text; dlg.appendChild(ta); ta.select();
-      try { document.execCommand('copy'); } catch (__) {}
-      ta.remove();
-    }
-    status.textContent = 'Copied ' + text;
-    b.textContent = 'Copied ✓';
-    setTimeout(() => { b.textContent = 'Copy'; }, 1800);
+
+  // Phone: on touch phones let tel: dial directly; on desktop show the number with Copy.
+  const phoneDlg = makeDialog('phone', 'Call me', 'Based in Turku, Finland (EET, UTC+2).',
+    [{ label: 'Mobile', value: PHONE.display, href: 'tel:' + PHONE.tel, action: 'Call with an app', primary: true }]);
+  const isPhone = () => window.matchMedia('(pointer: coarse)').matches && window.matchMedia('(max-width: 900px)').matches;
+  document.querySelectorAll('[data-open-phone]').forEach((b) => b.addEventListener('click', (ev) => {
+    if (isPhone()) return;          // follow the tel: link
+    ev.preventDefault();
+    phoneDlg.open();
   }));
 
   // ---- video tabs ----

@@ -1,17 +1,4 @@
-/* Interactive simulations (DP, thesis USV) and email dialog */
-/* ---------- email dialog ---------- */
-button.btn { cursor: pointer; font-family: inherit; }
-button.contact-item { text-align: left; cursor: pointer; font-family: inherit; width: 100%; }
-.contact-item small { display: block; font-size: 13px; color: var(--muted); font-weight: 400; margin-top: 2px; }
-.email-dialog { border: 1px solid var(--line); border-radius: 16px; padding: 28px; width: min(520px, calc(100vw - 32px)); background: var(--surface); color: var(--text); box-shadow: 0 20px 60px rgba(0,0,0,.3); }
-.email-dialog::backdrop { background: rgba(6, 14, 22, .55); backdrop-filter: blur(2px); }
-.email-dialog h2 { margin: 0 0 16px; font-size: 22px; }
-.email-close-form { position: absolute; top: 10px; right: 12px; margin: 0; }
-.email-close { background: none; border: 0; font-size: 26px; line-height: 1; color: var(--muted); cursor: pointer; padding: 4px 8px; }
-.email-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 0; border-top: 1px solid var(--line); }
-.email-row b { overflow-wrap: anywhere; }
-.email-label { display: block; font: 500 12px "JetBrains Mono", monospace; text-transform: uppercase; color: var(--muted); }
-.email-actions { display: flex; gap: 8px; }
+/* Interactive simulations (DP, thesis USV) */
 
 /* shared SVG styles */
 .lbl { font: 500 12px Inter, sans-serif; fill: rgba(255,255,255,.75); }
